@@ -1,175 +1,134 @@
-
 <!DOCTYPE html>
-<html lang="en">
-.divider{width:68px;height:6px;border-radius:6px;background:#F8D28B;margin:6px auto 12px}
-.sub{max-width:320px;margin:0 auto;color:#4C5160;font-size:18px;line-height:1.6}
-
-
-/* ticket card */
-.card{
-background:var(--card);
-margin:22px 16px 40px;
-border-radius:20px;
-box-shadow:0 2px 0 rgba(0,0,0,0.04), 0 18px 40px rgba(0,0,0,0.06);
-padding:20px 18px 24px;
-}
-.pill{display:inline-block;background:var(--pill);color:var(--pill-text);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;}
-.event{font-weight:800;color:#142033;font-size:30px;margin:16px 0 2px}
-.event2{font-weight:800;color:#142033;font-size:30px;margin:0 0 18px}
-
-
-.row{display:flex;align-items:center;gap:12px;margin:10px 0 2px;color:#1C2433;font-weight:700}
-.subrow{margin-left:36px;color:#3D4350;font-weight:600;margin-top:2px}
-.icon{width:22px;height:22px}
-</style>
-</head>
-<body>
-<main class="phone" role="main" aria-label="Ticket confirmation">
-<header class="appbar" aria-label="Top bar">
-<div class="brand">
-<div class="logo" aria-label="Mookh logo">m.</div>
-</div>
-<div class="help">Help</div>
-</header>
-
-
-<section class="hero">
-<div class="ok-badge" aria-hidden="true">
-<!-- dark green tick in circular cloud -->
-<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="32" cy="32" r="22" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 12"></circle>
-<path d="M22 32l7 7 14-16" stroke="var(--ok)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</div>
-<div class="hi">Hi, dillah mwangi</div>
-<div class="headline">You're All Set!</div>
-<div class="divider"></div>
-<p class="sub">Your ticket is valid. Get ready for an amazing experience!</p>
-</section>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Verified Ticket • CHAN 2024 Quarterfinals</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <title>You're All Set!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f6f2ea;
-      --card:#ffffff;
-      --ink:#151515;
-      --muted:#606060;
-      --accent:#a3651a;
-      --accent-2:#d8b077;
-      --accent-3:#f1e5d1;
-      --radius:22px;
-      --shadow: 0 6px 30px rgba(16, 24, 40, .08);
+      --bg:#FBF6EE;          /* warm cream page bg */
+      --card:#FFFFFF;        /* white card */
+      --ink:#1B1F23;         /* dark text */
+      --muted:#61646B;       /* body text */
+      --brand:#F4D64E;       /* m. badge yellow */
+      --accent:#0D1B2A;      /* deep navy headings */
+      --ok-bg:#E7FAEE;       /* pale green circle */
+      --ok:#1E7A3C;          /* dark green outline */
+      --pill:#F7EEDD;        /* verified tag bg */
+      --pill-text:#7A6538;   /* verified tag text */
+      --cta:#D98F3E;         /* orange headline */
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{max-width:720px;margin:0 auto;padding:24px 16px 64px}
-    .toast{
-      text-align:center;
-      background:linear-gradient(180deg, #fff, #faf6ee);
-      border-radius:28px;
-      padding:28px 18px;
-      margin:14px auto 22px;
-      box-shadow:var(--shadow);
-      font-weight:700;
-      line-height:1.3;
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      display:flex;align-items:flex-start;justify-content:center;
     }
-    .ticket-card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:20px;
+
+    /* phone frame to match screenshot width */
+    .phone{
+      width:390px; /* typical mobile width */
+      min-height:100vh;
+      background:var(--bg);
     }
-    .badge{
-      display:inline-block;
-      background:#f7efe0;
-      color:#8c5a17;
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.04em;
-      padding:8px 12px;
-      border-radius:999px;
-      margin-bottom:10px;
+
+    /* top app bar */
+    .appbar{
+      background:#F3EEE6;
+      padding:14px 16px;
+      border-bottom-left-radius:22px;
+      border-bottom-right-radius:22px;
+      display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:2;
     }
-    h1{
-      margin:4px 0 10px;
-      font-size:32px;
-      line-height:1.15;
-      font-weight:800;
+    .brand{
+      display:flex;align-items:center;gap:10px;
     }
-    .row{display:flex;gap:12px;align-items:flex-start;margin:14px 0}
-    .icon{
-      width:20px;height:20px;flex:0 0 20px;margin-top:2px;opacity:.9
+    .logo{
+      width:44px;height:44px;border-radius:50%;
+      background:var(--brand);display:grid;place-items:center;
+      font-weight:800;font-size:24px;color:#111;line-height:1;
     }
-    .muted{color:var(--muted)}
-    .field h3{margin:0 0 4px 0;font-size:15px;font-weight:700}
-    .field p{margin:0;font-size:16px}
-    .support{margin:16px 0 14px;color:var(--muted)}
-    .support a{color:var(--accent);font-weight:700;text-decoration:none}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:flex;gap:8px;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:14px;border:1px solid #eee;background:#fff;
-      font-weight:700;text-decoration:none;color:var(--ink);flex:1 1 160px
-    }
-    .btn.primary{background:#915819;color:#fff;border:none}
-    .section-title{font-weight:800;font-size:22px;margin:28px 0 14px;text-align:center}
-    .next-grid{display:grid;gap:16px}
+    .help{font-weight:600;color:#45484E}
+
+    /* hero section */
+    .hero{padding:28px 20px 8px; text-align:center;}
+    .ok-badge{width:120px;height:120px;border-radius:50%;background:var(--ok-bg);display:grid;place-items:center;margin:0 auto 12px}
+    .ok-badge svg{width:58px;height:58px}
+    .hi{font-weight:700;font-size:24px;color:#27324A;margin:8px 0}
+    .headline{font-weight:800;font-size:36px;color:var(--cta);margin:2px 0 8px}
+    .divider{width:68px;height:6px;border-radius:6px;background:#F8D28B;margin:6px auto 12px}
+    .sub{max-width:320px;margin:0 auto;color:#4C5160;font-size:18px;line-height:1.6}
+
+    /* ticket card */
     .card{
-      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;
+      background:var(--card);
+      margin:22px 16px 40px;
+      border-radius:20px;
+      box-shadow:0 2px 0 rgba(0,0,0,0.04), 0 18px 40px rgba(0,0,0,0.06);
+      padding:20px 18px 24px;
     }
-    .card h4{margin:10px 0 6px;font-size:22px}
-    .card p{margin:0;color:var(--muted);font-size:16px}
-    .faq{margin-top:18px}
-    details{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:14px 18px}
-    summary{list-style:none;cursor:pointer;font-weight:700}
-    summary::-webkit-details-marker{display:none}
-    .holder{margin:6px 0 2px;color:var(--muted);font-size:14px}
-    .name{font-size:16px;font-weight:800}
-    /* Utilities */
-    .spacer{height:6px}
+    .pill{display:inline-block;background:var(--pill);color:var(--pill-text);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;}
+    .event{font-weight:800;color:#142033;font-size:30px;margin:16px 0 2px}
+    .event2{font-weight:800;color:#142033;font-size:30px;margin:0 0 18px}
+
+    .row{display:flex;align-items:center;gap:12px;margin:10px 0 2px;color:#1C2433;font-weight:700}
+    .subrow{margin-left:36px;color:#3D4350;font-weight:600;margin-top:2px}
+    .icon{width:22px;height:22px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="toast">
-      Your ticket is valid. Get ready for an amazing experience!
-    </div>
+  <main class="phone" role="main" aria-label="Ticket confirmation">
+    <header class="appbar" aria-label="Top bar">
+      <div class="brand">
+        <div class="logo" aria-label="Mookh logo">m.</div>
+      </div>
+      <div class="help">Help</div>
+    </header>
 
-    <div class="ticket-card">
-      <div class="badge">VERIFIED TICKET</div>
-      <h1>CHAN 2024<br/>Quarterfinals</h1>
+    <section class="hero">
+      <div class="ok-badge" aria-hidden="true">
+        <!-- dark green tick in circular cloud -->
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="22" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 12"></circle>
+          <path d="M22 32l7 7 14-16" stroke="var(--ok)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="hi">Hi, dillah mwangi</div>
+      <div class="headline">You're All Set!</div>
+      <div class="divider"></div>
+      <p class="sub">Your ticket is valid. Get ready for an amazing experience!</p>
+    </section>
 
-      <div class="holder">Ticket holder</div>
-      <div class="name">Dillah Mwangi</div>
+    <section class="card" aria-label="Verified ticket details">
+      <span class="pill">VERIFIED TICKET</span>
+      <div class="event">CHAN 2024</div>
+      <div class="event2">Quarterfinals</div>
 
       <div class="row">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-          <rect x="3" y="4" width="18" height="18" rx="3"></rect>
-          <path d="M16 2v4M8 2v4M3 10h18"></path>
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
         </svg>
-        <div class="field">
-          <h3>Date & Time</h3>
-          <p>Fri, 22 Aug 2025<br/>12:00:00</p>
-        </div>
+        <div>Fri, 22 Aug 2025</div>
       </div>
+      <div class="subrow">12:00:00</div>
 
-      <div class="row">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-          <path d="M12 21s-7-4.35-7-10a7 7 0 1 1 14 0c0 5.65-7 10-7 10z"></path>
-          <circle cx="12" cy="11" r="3"></circle>
+      <div class="row" style="margin-top:16px">
+        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-6-4.35-6-9a6 6 0 1 1 12 0c0 4.65-6 9-6 9z"/>
+          <circle cx="12" cy="12" r="2"/>
         </svg>
-        <div class="field">
-          <h3>Venue</h3>
-          <p>Moi International Sports Centre</p>
-        </div>
+        <div>Venue</div>
       </div>
-
+      <div class="subrow">Moi International Sports Centre</div>
       <div class="support">
         Need help? <a href="#">Contact Support</a>
       </div>
