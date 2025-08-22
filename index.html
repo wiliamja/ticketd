@@ -1,6 +1,52 @@
 
 <!DOCTYPE html>
 <html lang="en">
+.divider{width:68px;height:6px;border-radius:6px;background:#F8D28B;margin:6px auto 12px}
+.sub{max-width:320px;margin:0 auto;color:#4C5160;font-size:18px;line-height:1.6}
+
+
+/* ticket card */
+.card{
+background:var(--card);
+margin:22px 16px 40px;
+border-radius:20px;
+box-shadow:0 2px 0 rgba(0,0,0,0.04), 0 18px 40px rgba(0,0,0,0.06);
+padding:20px 18px 24px;
+}
+.pill{display:inline-block;background:var(--pill);color:var(--pill-text);font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;}
+.event{font-weight:800;color:#142033;font-size:30px;margin:16px 0 2px}
+.event2{font-weight:800;color:#142033;font-size:30px;margin:0 0 18px}
+
+
+.row{display:flex;align-items:center;gap:12px;margin:10px 0 2px;color:#1C2433;font-weight:700}
+.subrow{margin-left:36px;color:#3D4350;font-weight:600;margin-top:2px}
+.icon{width:22px;height:22px}
+</style>
+</head>
+<body>
+<main class="phone" role="main" aria-label="Ticket confirmation">
+<header class="appbar" aria-label="Top bar">
+<div class="brand">
+<div class="logo" aria-label="Mookh logo">m.</div>
+</div>
+<div class="help">Help</div>
+</header>
+
+
+<section class="hero">
+<div class="ok-badge" aria-hidden="true">
+<!-- dark green tick in circular cloud -->
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="32" cy="32" r="22" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="3 12"></circle>
+<path d="M22 32l7 7 14-16" stroke="var(--ok)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+<div class="hi">Hi, dillah mwangi</div>
+<div class="headline">You're All Set!</div>
+<div class="divider"></div>
+<p class="sub">Your ticket is valid. Get ready for an amazing experience!</p>
+</section>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
